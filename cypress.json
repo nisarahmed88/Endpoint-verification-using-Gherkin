@@ -1,0 +1,6 @@
+{
+    "baseUrl":"https://reqres.in/",
+    "defaultCommandTimeout":60000,
+    "testFiles": "**/*.{feature,features}",
+    "requestTimeout":20000
+}

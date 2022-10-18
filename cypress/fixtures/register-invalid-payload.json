@@ -1,0 +1,10 @@
+{
+    "request":{
+        "email": "sydney@fife"
+    },
+
+    "response":{
+        "error": "Missing password"
+    }
+
+}

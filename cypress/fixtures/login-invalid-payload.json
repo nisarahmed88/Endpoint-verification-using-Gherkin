@@ -1,0 +1,9 @@
+{
+    "request":{
+        "email": "peter@klaven"
+    },
+
+    "response":{
+        "error": "Missing password"
+    }
+}
