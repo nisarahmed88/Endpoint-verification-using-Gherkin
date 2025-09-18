@@ -1,4 +1,4 @@
-# Shariq-Playwright-Javascript
+# Nisar-Javascript
 
 This project is a demonstration of automated testing using **Playwright** with **Javascript** for the **Cloud-Pager** Application.
 
@@ -43,3 +43,4 @@ The project structure is organized as follows:
 * utils: Contains **utility** functions, a random string generator for workpods (useful for creating new workpod in tests).
 
 Feel free to explore the project structure and customize it according to your requirements.
+
