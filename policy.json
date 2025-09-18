@@ -1,0 +1,525 @@
+{
+    "validationMessages": {
+        "policyCreatedMessage": "Policy Created",
+        "newPolicyAlertMessage": "have been created successfully.",
+        "policyCreationSucessMessage":"has been created successfully."
+    },
+    "createAndUpdatePolicy": {
+        "name": "Automation Policy name",
+        "description": "Automated description",
+        "updatedName": "Automation Policy name",
+        "updatedDescription": "Automated Description Edited",
+        "applications": [
+            "7-Zip"
+        ],
+        "deploymentConstraints" : {
+            "maximumSeats" : "100",
+            "maximumDesktopPerUser" : "100",
+            "maximumSeatsOnEdit" :  "10",
+            "maximumDesktopPerUserOnEdit" : "10",
+            "toggle":  true
+        },
+        "offlineUsage" : {
+            "maxDays" : "100",
+            "maxDaysOnEdit" : "10",
+            "toggle":  true
+        },
+        "pagingOptimizations" : {
+            "pageEntireAppset" : {
+            "toggle":  false
+            }
+        }
+    },
+    "invalidInputPolicy": [       
+        {
+            "testName": "Validate the appearance of an error messages on creation of policy without providing name, Description and Selection of an Application.",
+            "name": "",
+            "description": "",
+            "nameErrorMsg": "A value must be provided",
+            "descriptionErrorMsg": "A value must be provided"
+        },
+        {
+            "testName": "Validate the appearance of an error messages on entring special characters in name and keeping Description Blank.",
+            "name": "?@",
+            "description": "$&",
+            "nameErrorMsg": "Value must be at least 3 characters",
+            "descriptionErrorMsg": "Value must be at least 3 characters"
+        },
+        {
+            "testName": "Validate the appearance of an error messages on entering greater than 1000 characters (exceeding max limit) in name and description",
+            "name": "sdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdassdfasdfasdfasdfasdffasdfasdfasdfasdfasdfsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfeqqwerqafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdw",
+            "description": "sdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdassdfasdfasdfasdfasdffasdfasdfasdfasdfasdfsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfeqqwerqafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdw",
+            "nameErrorMsg": " Value must not exceed 1000 characters ",
+            "descriptionErrorMsg": "Value must not exceed 1000 characters"
+        },
+        {
+            "testName": "Validate the appearance of an error messages by keeping name and description of policy empty and on entering two spaces in 'Max Seats' field of Deployment Constraint Control of Policy.",
+            "name": "",
+            "description": "",
+            "nameErrorMsg": "A value must be provided",
+            "descriptionErrorMsg": "A value must be provided",
+            "deploymentConstraint": {
+                "toggle": true,
+                "maximumSeat" : {
+                    "errorMsg" :  "Only numbers are allowed in this field",
+                    "value" : "  "
+                }
+            }
+            
+        },
+        {
+            "testName": "Validate the appearance of the error messages by keeping name and description of policy empty and on entering two spaces in both 'Max Seats' and 'Desktop Per User' fields of Deployment Constraint Control of Policy.",
+            "name": "",
+            "description": "",
+            "nameErrorMsg": "A value must be provided",
+            "descriptionErrorMsg": "A value must be provided",
+            "deploymentConstraint": {
+                "toggle": true,
+                "maximumSeat" : {
+                    "errorMsg" :  "Only numbers are allowed in this field",
+                    "value" : "  "
+                },
+                "maximumDesktop" : {
+                    "errorMsg" :  "Only numbers are allowed in this field",
+                    "value" : "  "
+                }
+            }
+            
+        },
+        {
+            "testName": "Validate the appearance of the error messages by keeping name and description of policy empty and on entering two characters in 'Max Seats' field of Deployment Constraint Control of Policy.",
+            "name": "",
+            "description": "",
+            "nameErrorMsg": "A value must be provided",
+            "descriptionErrorMsg": "A value must be provided",
+            "deploymentConstraint": {
+                "toggle": true,
+                "maximumSeat" : {
+                    "errorMsg" :  "Only numbers are allowed in this field",
+                    "value" : "sd"
+                }
+            }
+            
+        },
+        {
+            "testName": "Validate the appearance of the error messages by keeping name and description of policy empty and on entering two characters in both 'Max Seats' and 'Desktop per User' fields of Deployment Constraint Control of Policy.",
+            "name": "",
+            "description": "",
+            "nameErrorMsg": "A value must be provided",
+            "descriptionErrorMsg": "A value must be provided",
+            "deploymentConstraint": {
+                "toggle": true,
+                "maximumSeat" : {
+                    "errorMsg" :  "Only numbers are allowed in this field",
+                    "value" : "sd"
+                },
+                "maximumDesktop" : {
+                    "errorMsg" :  "Only numbers are allowed in this field",
+                    "value" : "ee"
+                }
+            }
+            
+        },
+        {
+            "testName": "Validate the appearance of the error messages by keeping name and description of policy empty and on entering special characters in 'Max Seats' field of Deployment Constraint Control of Policy.",
+            "name": "",
+            "description": "",
+            "nameErrorMsg": "A value must be provided",
+            "descriptionErrorMsg": "A value must be provided",
+            "deploymentConstraint": {
+                "toggle": true,
+                "maximumSeat" : {
+                    "errorMsg" :  "Only numbers are allowed in this field",
+                    "value" : "@#$%"
+                }
+            }
+            
+        },
+        {
+            "testName": "Validate the appearance of the error messages by keeping name and description of policy empty and on entering special characters in both 'Max Seats' and 'Desktop per User' fields of Deployment Constraint Control of Policy.",
+            "name": "",
+            "description": "",
+            "nameErrorMsg": "A value must be provided",
+            "descriptionErrorMsg": "A value must be provided",
+            "deploymentConstraint": {
+                "toggle": true,
+                "maximumSeat" : {
+                    "errorMsg" :  "Only numbers are allowed in this field",
+                    "value" : "@$%"
+                },
+                "maximumDesktop" : {
+                    "errorMsg" :  "Only numbers are allowed in this field",
+                    "value" : "%@#"
+                }
+            }
+            
+        },
+        {
+            "testName": "Validate the appearance of the error messages on enabling of the Deployment Constraint without providing value to its related fields.",
+            "name": "Enable deployment Constraint",
+            "description": "Enable Deployment Constraint",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraintsOnly" : {
+                "toggle":  true,
+                "errorMsg" : "Please provide a value for one or more fields in the Deployment Constraints section or disable this option."
+            }
+        },
+        {
+            "testName": "Validate the appearance of the error messages on enabling of Software Reclamation Control without providing value to its related fields.",
+            "name": "Enable Software Reclamation",
+            "description": "Enable Software Reclamation",
+            "applications": [
+                "7-Zip"
+            ],
+            "softwareReclamationOnly" : {
+                "toggle":  true,
+                "errorMsg" : "Please provide a value for one or more fields in the Software Reclamation section or disable this option."
+            }
+        },
+        {
+            "testName": "Validate the appearance of the error messages on enabling of Offline Usage Control without providing value to its related fields.",
+            "name": "Enable Offline Usage",
+            "description": "Enable Offline Usage",
+            "applications": [
+                "7-Zip"
+            ],
+            "offlineUsageOnly" : {
+                "toggle":  true,
+                "errorMsg" : " Please provide a value for one or more fields in the Offline Usage section or disable this option. "
+            }
+        },
+        {
+            "testName": "create a policy having all toggle buttons turned on but don’t populated data in the related fields just turn-on toggle button and hit save. Assert the error message.",
+            "name": "Turn On All Toggle Buttons",
+            "description": "Turn On All Toggle Buttons Description",
+            "turnAllToggleButtonOn": {
+                "deploymentConstraint": {
+                    "toggle": true
+                },
+                "offlineUsage" : {
+                    "toggle": true
+                },
+                "softwareReclamation": {
+                    "toggle":true
+                },
+                "errorMsg" : "Please select an application to apply this policy to."   
+            }          
+                    
+        }
+       
+    ],
+    "invalidToggleButtonInputPolicy": [
+        {   
+            "testName": "Validate the appearance of the error messages on entering -1 (Negative) value in all fields of Deployment Constraint and Offline Usage Control.",
+            "name": "Negative -1 Value Check",
+            "description": "We will check toggle inputs by using negative values",
+            "deploymentConstraints" : {
+                "toggle": true,
+                "maximumDesktopPerUser" : {
+                        "value" : "-1",
+                        "errorMsg": "Value must be 1 or greater"
+                },
+                "maximumSeats" : {
+                        "value" : "-1",
+                        "errorMsg": "Value must be 1 or greater"
+                }               
+            },
+            "offlineUsage" : {
+                "toggle": true, 
+                "maxDays" : {
+                        "value" : "-1",
+                        "errorMsg": "Value must be 1 or greater"
+                }
+            }
+        },
+        {
+            "testName": "Valdate the appearance of the error messages on entering Zero value in all fields of Deployment Constraint and Offline Usage Control.",
+            "name": "Zero Value Check",
+            "description": "We will check toggle inputs by using neutral values",
+            "deploymentConstraints" : {
+                "toggle": true,
+                "maximumDesktopPerUser" : {
+                        "value" : "0",
+                        "errorMsg": "Value must be 1 or greater"
+                },
+                "maximumSeats" : {
+                        "value" : "0",
+                        "errorMsg": "Value must be 1 or greater"
+                }               
+            },
+            "offlineUsage" : {
+                "toggle": true, 
+                "maxDays" : {
+                        "value" : "0",
+                        "errorMsg": "Value must be 1 or greater"
+                }
+            }
+        },
+        {
+        "testName": "Valdate the appearance of the error messages on entering Max limit exceeding value in all fields of Deployment Constraint and Offline Usage Control.",
+        "name": "Exceeded Value Check",
+        "description": "We will check toggle inputs by using exceeded values",
+        "deploymentConstraints" : {
+            "toggle": true,
+            "maximumDesktopPerUser" : {
+                    "value" : "10000000",
+                    "errorMsg": "Value must not exceed 1000000"
+            },
+            "maximumSeats" : {
+                    "value" : "10000000",
+                    "errorMsg": "Value must not exceed 1000000"
+            }               
+        },
+        "offlineUsage" : {
+            "toggle": true, 
+            "maxDays" : {
+                    "value" : "10000000",
+                    "errorMsg": "Value must not exceed 365"
+            }
+        }
+    }
+       
+    ],
+    "validInputPolicy": [
+        
+        {
+            "testName": "Create a Policy with International name and description having 100 value in all fields of both Deployment Constraint and Offline Usage Controlds. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "送り仮名送り仮名送り仮名送り仮名送り仮名送り仮名?送り仮名|送り仮名?",
+            "description": "送り仮名送り仮名送り仮名送り仮名送り仮名送り仮名?送り仮名|送り仮名?",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraints" : {
+                "maximumSeats" : "100",
+                "maximumDesktopPerUser" : "100",
+                "toggle":  true
+                    
+            },
+            "offlineUsage" : {
+                "maxDays" : "100",
+                "toggle":  true
+            }
+        },
+        {
+            "testName": "Create a Policy with Max data (1000 characters) in the name and description having 100 value in all fields of both Deployment Constraint and Offline Usage Controls. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "sdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdassdfasdfasdfasdfasdffasdfasdfasdfasdfasdfsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfeqqwerqafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasd",
+            "description": "sdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdassdfasdfasdfasdfasdffasdfasdfasdfasdfasdfsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfeqqwerqafsdfsafasdsdasdfafasdafsdfsafasdsdasdfafasdafsdfsafasd",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraints" : {
+                "maximumSeats" : "100",
+                "maximumDesktopPerUser" : "100",
+                "toggle":  true
+            },
+            "offlineUsage" : {
+                "maxDays" : "100",
+                "toggle":  true
+            }
+        },
+        {
+            "testName": "Create a Policy with 10 digits in name and description having 100 value in all fields of both Deployment Constraint and Offline Usage Controls. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "0123456789",
+            "description": "0123456789",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraints" : {
+                "maximumSeats" : "100",
+                "maximumDesktopPerUser" : "100",
+                "toggle":  true
+            },
+            "offlineUsage" : {
+                "maxDays" : "100",
+                "toggle":  true
+            }
+        },
+        {
+            "testName": "Create a Policy with Special characters in the name and description having 100 value in all fields of both Deployment Constraint and 10 value in Offline Usage Controls. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "$#@#$%^&()-=+_<>?/|P[]{}$#@#$%^&()-=+_<>?/|P[]{}$#@#$%^&*()-=+_<>?/|P[]{}$#@#$%^&",
+            "description": "$#@$#@#$%^&()-=+_<>?/|P[]{}$#@#$%^&()-=+_<>?/|P[]{}$#@#$%^&*()-=+_<>?/|P[]{}",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraints" : {
+                "maximumSeats" : "100",
+                "maximumDesktopPerUser" : "100",
+                "toggle":  true
+            },
+            "offlineUsage" : {
+                "maxDays" : "100",
+                "maxDaysOnEdit" : "10",
+                "toggle":  true
+            }
+        },
+        {
+            "testName": "Create a policy with 7 Zip Application selected in it and 100 value passed to all related fields of both Deployment Constraint and Offline Usage Controls. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "Automation Policy with 1 applications",
+            "description": "Automation Policy with 1 applications",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraints" : {
+                "maximumSeats" : "100",
+                "maximumDesktopPerUser" : "100",
+                "toggle":  true
+            },
+            "offlineUsage" : {
+                "maxDays" : "100",
+                "toggle":  true
+            }
+        },
+        {
+            "testName": "Verufy creation of duplicate policy with again same data - 7 Zip Application selected in it and 100 value passed to all related fields of both Deployment Constraint and Offline Usage Controls. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "Duplicate policy name",
+            "description": "Duplicate policy description",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraints" : {
+                "maximumSeats" : "100",
+                "maximumDesktopPerUser" : "100",
+                "toggle":  true
+            },
+            "offlineUsage" : {
+                "maxDays" : "100",
+                "toggle":  true
+            }
+        },
+        {
+            "testName": "Verify Creation of Policy by enabling Paging Optimization Control. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "Paging Optimization control",
+            "description": "Paging Optimization control",
+            "applications": [
+                "7-Zip"
+            ],
+            "pagingOptimizations" : {
+                "pageEntireAppset" : {
+                "toggle":  true
+                }
+            }
+        },
+        {
+            "testName": "Instead of 100 now Add 500 value to only max seats fields in Deployment Constraints and Save policy. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "500 max seats",
+            "description": "500 max seats",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraints" : {
+                "maximumSeats" : "500",
+                "toggle":  true
+            }
+        },
+        {
+            "testName": "Instead of 100 now Add 500 value to both fields in Deployment Constraints and Save policy. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "500 both fields",
+            "description": "500 both fields",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraints" : {
+                "maximumSeats" : "500",
+                "maximumDesktopPerUser" : "500",
+                "toggle":  true
+            }
+        },
+	 {
+            "testName": "Create a policy by entering 70 value in both fields of Deployment Constraint and then disable it and Save Policy. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "Create Policy using deployment constraints",
+            "description": "Enter valid data in all two fields like 70 and then disable it and save.",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraints" : {
+                "maximumSeats" : "70",
+                "maximumDesktopPerUser" : "70",
+                "toggle": true,
+                "toggleOff" : false
+            }
+        },
+	{
+            "testName": "Create a policy by entering 300 value in  the field of Offline Usage Control and then disable it and Save Policy. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "Create a policy by enabling offline usage control",
+            "description": "Enter valid data in the field like 300 and then disable it and save.",
+            "applications": [
+                "7-Zip"
+            ],
+            "offlineUsage" : {
+                "maxDays" : "300",
+                "toggle": true,
+                "toggleOff" : false
+            }
+        },      
+        {
+            "testName": "Create a policy with Software Reclamation control enabled in it. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "Software Reclamation",
+            "description": "Software Reclamation",
+            "applications": [
+                "7-Zip"
+            ],
+            "softwareReclamation" : {
+                "toggle" :true,
+                "inactivedays" : "20"
+            }
+        },
+        {
+            "testName": "Create a policy in which enable and disable paging optimization control 3 times. Now delete this policy after successful verification for performing cleaning operation.",
+            "name": "paging optimization control 3 times",
+            "description": "paging optimization control 3 times",
+            "applications": [
+                "7-Zip"
+            ],
+            "pagingOptimizations" : {
+                "pageEntireAppset" : {
+                "toggle":  true
+                }
+            }
+        },
+        {
+            "testName": "create a policy with all toggles enabled and put any valid value in the fields.",
+            "name": "All toggle buttons On with valid values",
+            "description": "All toggle buttons On with valid values description",
+            "applications": [
+                "7-Zip"
+            ],
+            "deploymentConstraints" : {
+                "maximumSeats" : "100",
+                "maximumDesktopPerUser" : "100",
+                "toggle":  true
+            },
+            "offlineUsage" : {
+                "maxDays" : "100",
+                "toggle":  true
+            },
+            "softwareReclamation" : {
+                "toggle" :true,
+                "inactivedays" : "20"
+            }
+        },
+        {
+            "testName": "a policy Software Reclamation and Offline Usage toggle enabled put any valid value in the fields.",
+            "name": "Software Reclamation and Offline Usage toggle enabled",
+            "description": "Software Reclamation and Offline Usage toggle enabled description",
+            "applications": [
+                "7-Zip"
+            ],
+            "offlineUsage" : {
+                "maxDays" : "100",
+                "toggle":  true
+            },
+            "softwareReclamation" : {
+                "toggle" :true,
+                "inactivedays" : "20"
+            }
+        }
+
+    ],
+    "policyDeletion" : {
+        "policyNameSearch" : {
+            "name" : "Automation"
+        }
+    }
+}

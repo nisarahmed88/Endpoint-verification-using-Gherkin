@@ -1,0 +1,153 @@
+{
+    "validationMessages": {
+        "storefrontCreatedMessage": "Storefront Created",
+        "newDraftAlertMessage": "New draft created.",
+        "newPublishAlertMessage": "New storefront published",
+        "saveToDraftsMessage": "have been saved to your drafts.",
+        "deleteStorefrontMessage": "Storefront deleted.",
+        "publishStorefrontMessage": "have been published successfully.",
+        "removeFromDraftMessage": "has been removed from your drafts.",
+        "enableStorefrontMessage": "Success Message",
+        "disableStorefrontMessage": "Error Message"
+    },
+    "autodeployValidationStorefront": {
+        "name": "Automation storefront name",
+        "description": "Automated description",
+        "updatedName": "Automation Edited",
+        "updatedDescription": "Automated Description Edited",
+        "searchName": "automation",
+        "comment": "Automated comment...",
+        "applications": [
+            "1_appv_putty",
+            "1_stp_babel",
+            "FileZilla_PowerShell",
+            "2_appv_InstEdit",
+            "2_stp_notepad++",
+            "GSD_AppV_AdobeAcrobatReaderDC_1",
+            "Notepad++"
+        ],
+        "groups": [
+            "Automation Group 02",
+            "Automation Group 03",
+            "AAD DC Administrators",
+            "Automation Group 01"
+        ],
+        "users": [
+            "Auto User 001",
+            "Auto User002",
+            "Auto User003",
+            "Billing-Test-1",
+            "UAT1",
+            "UAT2"
+        ]
+    },
+    "invalidInputStorefronts": [
+        {
+            "testName": "Add/Save a storefront without name and description.",
+            "name": "",
+            "description": "",
+            "nameErrorMsg": "A value must be provided",
+            "descriptionErrorMsg": ""
+        },
+        {
+            "testName": "Add/Save a storefront with 1 character in name and description",
+            "name": "@",
+            "description": "$",
+            "nameErrorMsg": "Value must be at least 3 characters",
+            "descriptionErrorMsg": "Value must be at least 3 characters"
+        },
+        {
+            "testName": "Add/Save a storefront with greater than 160 characters in name and description",
+            "name": "gcvaghsdvcghavsdghcaghdsvchgavsdghcvhagdsvcghvasdhgvcghadsvhgcvahgdsvcvashgdvcasdghvchgsvdghchgsdvgcvsgdvcghvsdghvcghsvdghcvshgvdcghvshgdcvghsvdhgcvshgvdcsvdghcvghsdvcgvshgdvc",
+            "description": "gcvaghsdvcghavsdghcaghdsvchgavsdghcvhagdsvcghvasdhgvcghadsvhgcvahgdsvcvashgdvcasdghvchgsvdghchgsdvgcvsgdvcghvsdghvcghsvdghcvshgvdcghvshgdcvghsvdhgcvshgvdcsvdghcvghsdvcgvshgdvc",
+            "nameErrorMsg": "Value must be at less than 160 characters",
+            "descriptionErrorMsg": "Value must be at less than 160 characters"
+        }
+    ],
+    "validinputStorefronts": [
+        {
+            "testName": "Add/Save a storefront with International name and description",
+            "name": "送り仮名送り仮名送り仮名送り仮名送り仮名送り仮名?送り仮名|送り仮名?",
+            "description": "送り仮名送り仮名送り仮名送り仮名送り仮名送り仮名?送り仮名|送り仮名?",
+            "applications": [],
+            "groups": [],
+            "users": []
+        },
+        {
+            "testName": "Add/Save a storefront with 160 characters (Max limit) in name and description",
+            "name": "gcvaghsdvcghavsdghcaghdsvchgavsdghcvhagdsvcghvasdhgvcghadsvhgcvahgdsvcvashgdvcasdghvchgsvdghchgsdvgcvsgdvcghvsdghvcghsvdghcvshgvdcghvshgdcvghsvdhgcvshgvdcsvdghc",
+            "description": "gcvaghsdvcghavsdghcaghdsvchgavsdghcvhagdsvcghvasdhgvcghadsvhgcvahgdsvcvashgdvcasdghvchgsvdghchgsdvgcvsgdvcghvsdghvcghsvdghcvshgvdcghvshgdcvghsvdhgcvshgvdcsvdghc",
+            "applications": [],
+            "groups": [],
+            "users": []
+        },
+        {
+            "testName": "Add/Save a storefront with 10 numbers in name and description",
+            "name": "0123456789",
+            "description": "0123456789",
+            "applications": [],
+            "groups": [],
+            "users": []
+        },
+        {
+            "testName": "Add/Save a storefront with all special characters in name and description",
+            "name": "$#@#$%^&()-=+_<>?/|P[]{}$#@#$%^&()-=+_<>?/|P[]{}$#@#$%^&*()-=+_<>?/|P[]{}$#@#$%^&",
+            "description": "$#@$#@#$%^&()-=+_<>?/|P[]{}$#@#$%^&()-=+_<>?/|P[]{}$#@#$%^&*()-=+_<>?/|P[]{}",
+            "applications": [],
+            "groups": [],
+            "users": []
+        },
+        {
+            "testName": "Add/Save a storefront with all 3 applications selected.",
+            "name": "Automation storefront 3 applications",
+            "description": "Automation storefront with 3 applications",
+            "applications": [
+                "1_appv_putty",
+                "1_stp_babel",
+                "2_stp_notepad++"
+            ],
+            "groups": [],
+            "users": []
+        },
+        {
+            "testName": "Add/Save a storefront with 3 groups selected.",
+            "name": "Automation storefront 3 groups",
+            "description": "Automation storefront with 3 groups",
+            "applications": [],
+            "groups": [
+                "All Company",
+                "All Users",
+                "asdasdasdasd"
+            ],
+            "users": []
+        },
+        {
+            "testName": "Add/Save a storefront with  3 users selected.",
+            "name": "Automation storefront 3 users",
+            "description": "Automation storefront with 3 users",
+            "applications": [],
+            "groups": [],
+            "users": [
+                "Auto User 001",
+                "Auto User002",
+                "Auto User003"
+            ]
+        },
+        {
+            "testName": "Under the Negative/Edge cases, be sure to test editing with 0 apps and 0 users/groups.",
+            "name": "Automation simple storefront",
+            "description": "Automation storefront without applications, groups, and users",
+            "applications": [],
+            "groups": [],
+            "users": []
+        }
+    ],
+    "storefrontCloudpagerApplication": {
+        "url": "https://staging.storefront.cloudpager.net/applications",
+        "applicationNames": [
+            "7-Zip",
+            "GSD_AppV_AdobeAcrobatReaderDC_1"
+        ],
+        "alertText": " is launching. This may take a moment."
+    }
+}
